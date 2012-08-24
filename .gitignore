@@ -1,0 +1,35 @@
+##############################################################################
+#                                                                            #
+# Folk gitignore for WordPress 3.1                                           #
+# http://wearefolk.com                                                       #
+#                                                                            #
+# DO NOT EDIT BETWEEN HERE...                                                #
+#                                                                            #
+##############################################################################
+
+/.htaccess
+/index.php
+/wp-*.php
+/xmlrpc.php
+/*.txt
+/readme.html
+/wp-admin/
+/wp-content/*
+!/wp-content/themes/
+/wp-content/themes/*
+/wp-includes/
+
+##############################################################################
+#                                                                            #
+# ...AND HERE!                                                               #
+#                                                                            #
+# Notes:                                                                     #
+# We don't version control WordPress plugins as these are generally self     #
+# contained and are tremendously easy to swap in and out anyway.             #
+#                                                                            #
+# Add per-install config below this point.                                   #
+#                                                                            #
+##############################################################################
+
+# Replace your-theme-here with your theme name
+!/wp-content/themes/yes/
