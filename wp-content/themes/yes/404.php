@@ -7,6 +7,8 @@
 <?php get_search_form(); ?>
 </div>
 </div>
+
+<a>Test</a>
 </div>
 <?php get_sidebar(); ?>
 <?php get_footer(); ?>
