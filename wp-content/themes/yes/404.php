@@ -9,6 +9,5 @@
 </div>
 </div>
 
-<a></a>
 <?php get_sidebar(); ?>
 <?php get_footer(); ?>
