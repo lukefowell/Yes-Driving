@@ -1,4 +1,12 @@
-<?php get_header(); ?>
+<?php
+/*
+*
+* Template Name: Instructor
+*
+*
+*/
+?>
+<?php get_header('instructor'); ?>
 <article id="content">
 <?php the_post(); ?>
 <div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
@@ -9,4 +17,4 @@
 </div>
 </article>
 <?php get_sidebar(); ?>
-<?php get_footer(); ?>
+<?php get_footer('instructor'); ?>

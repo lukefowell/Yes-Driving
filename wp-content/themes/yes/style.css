@@ -21,3 +21,119 @@ body
 	width:100%;
 	margin:0 auto;
 }
+
+header {
+width: 100%;
+margin-top: 40px;
+}
+
+#blog-title {
+float: left;
+}
+
+#top-right {
+float: right;
+margin-bottom: 40px;
+width:250px;
+}
+
+
+.facebook, .twitter {
+float: right;
+margin-top: -62px;
+border-radius: 5px;
+}
+
+.twitter {
+margin-top: -30px;
+}
+
+
+nav {
+clear: both;
+margin-left: 10px;
+}
+
+nav li {
+display: block;
+width:33%;
+float:left;
+}
+
+nav li a {
+border-radius: 5px;
+margin-left: 4px; margin-right: 4px;
+padding-left: 17px; padding-right: 17px; padding-top: 14px; padding-bottom: 13px;
+background: #FFF url(http://mitchguy.com/yesdriving/wp-content/themes/yes/images/nav_bg.jpg);
+text-decoration: none;
+color: #111;
+font-family: Helvetica;
+font-weight: lighter; font-size: 14px; text-transform: uppercase;
+display:block;
+text-align:center;
+}
+
+nav li ul.children {
+display:none;
+}
+
+nav li a:hover {
+background: #FFF;
+}
+
+#container
+{
+clear:both;
+background: #FFF;
+height: 1000px;
+margin-top: 0px;
+position: relative;
+padding-top:20px;
+}
+
+#container .learner-menu-container, #container .instructor-menu-container, #container .residential-menu-container
+{
+	background:#444;
+	clear:both;
+	height:35px;
+}
+
+#container .learner-menu-container li, #container .instructor-menu-container li, #container .residential-menu-container li
+{
+	color:#fff;
+	font-family:Arial, Helvetica, sans-serif;
+	float:left;
+	padding:12px;
+	margin-left:10px;
+	margin-right:10px;
+	font-size:12px;
+}
+
+#container .learner-menu-container li a, #container .instructor-menu-container li a, #container .residential-menu-container li a
+{
+	color:#fff;
+	text-decoration:none;
+}
+
+#content
+{
+padding: 40px;	
+}
+
+.entry-content h1 {
+width: 100%;
+border-bottom: 2px dashed #EDEDED;
+font-size: 30px; margin-bottom: 20px; padding-bottom: 15px; 
+font-family: Helvetica; font-weight: bold; color: #222;
+}
+
+.entry-content p {
+font-size: 13px; font-family: Helvetica; color: #222;
+}
+
+.parent-pageid-12 li.menu-item-31 a,
+.page-id-12 li.menu-item-31 a,
+.parent-pageid-25 li.menu-item-30 a,
+.page-id-25 li.menu-item-30 a,
+.page-id-27 li.menu-item-29 a,
+.parent-pageid-27 li.menu-item-29 a{background-image:none; background-color:#fff;}

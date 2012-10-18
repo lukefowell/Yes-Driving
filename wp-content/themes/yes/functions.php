@@ -26,9 +26,14 @@ return $title;
 }
 }
 function blankslate_register_menus() {
-register_nav_menus(
-array( 'main-menu' => __( 'Main Menu', 'blankslate' ))
-);
+	register_nav_menus(
+		array( 
+			'main-menu' => 'Main Menu',
+			'learner-menu' => 'Learners',
+			'instructor-menu' => 'Instructors',
+			'residential-menu' => 'Residential',
+		)
+	);
 }
 add_action( 'init', 'blankslate_register_menus' );
 function blankslate_theme_widgets_init() {
@@ -40,6 +45,16 @@ register_sidebar( array (
 'before_title' => '<h3 class="widget-title">',
 'after_title' => '</h3>',
 ) );
+
+register_sidebar( array (
+'name' => 'Primary Widget Area1',
+'id' => 'primary-widget-area1',
+'before_widget' => '<li id="%1$s" class="widget-container %2$s">',
+'after_widget' => "</li>",
+'before_title' => '<h3 class="widget-title">',
+'after_title' => '</h3>',
+) );
+
 }
 add_action( 'init', 'blankslate_theme_widgets_init' );
 $preset_widgets = array (

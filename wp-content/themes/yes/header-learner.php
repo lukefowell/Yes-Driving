@@ -33,3 +33,4 @@
 </nav>
 </header>
 <div id="container">
+<?php wp_nav_menu( array( 'theme_location' => 'learner-menu', 'container_class' => 'learner-menu-container' ) ); ?>
