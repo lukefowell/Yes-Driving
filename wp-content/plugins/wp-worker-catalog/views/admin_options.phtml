@@ -1,0 +1,85 @@
+		<div class="wrap">
+		<div class="icon32" id="icon-options-general"></div>
+		<h2><?php echo MANPOWER_TITLE?></h2>		
+		<form action="options.php" method="post">
+			<?php echo settings_fields(MANPOWER)?>
+			<ul class="mp_options_fields" >
+				<li class="mp_options_field_items mp_row">
+					<label class="mp_options_field_label mp_column"><?php _e("Catalog Slug", MANPOWER_LANG)?>
+					<?php /*find a better tooltiop icon!
+					<span class="mp_option_field_tooltip">
+						<img class="mp_option_field_tooltip_image" src="<?php echo plugins_url('images/question.png', dirname(__FILE__))?>" width="15"/>
+					</span>
+					*/?>
+					</label> 
+					<span class="mp_options_field_input_span mp_column">e.g. <?php echo get_bloginfo('url')?>/<input type="text" class="text mp_narrow" name="mp_catalog_slug" value="<?php echo get_option('mp_catalog_slug')?>" /></span>
+				</li>
+				<?php /*
+				<li class="mp_options_field_items mp_row">
+					<label class="mp_options_field_label mp_column mp_options_info description"><?php _e("If a page with the given slug already exists, the original page will be hidden intact (NOT deleted NOR modified in any way). To view it again, simply change the value of Catalog Slug.<br /><br /> If the page with the given Catalog Slug does not exist yet, it will be created.", MANPOWER_LANG)?></label> 
+				</li>
+				*/?>
+				
+				<li class="mp_options_field_items mp_row">
+					<label class="mp_options_field_label mp_column"><?php _e("Worker Slug", MANPOWER_LANG)?>
+					<?php /*find a better tooltiop icon!
+						<span class="mp_option_field_tooltip">
+							<img class="mp_option_field_tooltip_image" src="<?php echo plugins_url('images/question.png', dirname(__FILE__))?>" width="15"/>
+						</span>
+					*/?>
+					</label> 
+					
+					<span class="mp_options_field_input_span mp_column">e.g. <?php echo get_bloginfo('url')?>/<input type="text" class="text mp_narrow" name="mp_worker_slug" value="<?php echo get_option('mp_worker_slug')?>" />/john-doe</span>
+				</li>
+				
+				<?php /*
+				<li class="mp_options_field_items mp_row">
+					<label class="mp_options_field_label mp_column mp_options_info description"><?php _e("If settings do not take effect immediately, refresh the permalinks by going to permalinks and hitting Save Changes, without modifications of settings.", MANPOWER_LANG)?></label> 
+				</li>
+				*/?>
+				
+				
+				<li class="mp_options_field_items mp_row">
+					<label class="mp_options_field_label mp_column"><?php _e('Send email notification to', MANPOWER_LANG)?></label> 
+					<span class="mp_options_field_input_span mp_column">
+						<select id="mp_email_to_notify_mode" name="mp_email_to_notify_mode">
+							<option value="admin"> (admin) <?php echo get_bloginfo('admin_email')?></option>
+							<option value="others">Others</option>
+						</select>
+						<input type="text" class="text mp_wide" name="mp_email_to_notify" id="mp_email_to_notify" style="display: none;" value="<?php echo get_option('mp_email_to_notify')?>"/>
+					</span>
+				</li>
+				
+				<li class="mp_options_field_items mp_row">
+					<label class="mp_options_field_label mp_column">&nbsp;</label> 
+					<span class="mp_options_field_input_span mp_column">
+						<input type="checkbox" name="mp_notify_workers" <?php if(get_option('mp_notify_workers') == 'on'):?>checked="checked"<?php endif?> /><?php _e('Notify workers via their email addresses also', MANPOWER_LANG)?>
+					</span>
+				</li>
+			
+			</ul>
+		
+		<?php /** Advanced otions **/?>
+		<h3 style="padding-top: 30px;">Advanced Options</h3>	
+		<h4><em><?php _e('Modify these settings if you know what you are doing. Else you can safely leave them alone.', MANPOWER_LANG)?></em></h4>	
+		
+			<ul>
+				<li class="mp_options_field_items mp_row">
+					<label class="mp_options_field_label mp_column">Capability Type <br />(<a href="http://codex.wordpress.org/Function_Reference/register_post_type" target="_blank">capability_type parameter for register_post_type</a>)</label> 
+					<span class="mp_options_field_input_span mp_column">
+						<input type="text" class="text mp_wide" name="mp_capability_type" id="mp_capability_type" value="<?php echo get_option('mp_capability_type')?>"/>
+					</span>
+				</li>
+			
+			</ul>		
+		
+		<?php /** Submit button **/?>
+		<ul>
+					<li class="mp_options_field_items mp_row" style="padding: 20px;">
+					<label class="mp_options_field_label mp_column">&nbsp;</label> 
+					<span class="mp_options_field_input_span mp_column"><input type="submit" value="<?php _e('Update', MANPOWER_LANG)?>" /></span>
+				</li>			
+		</ul>		
+			
+		</form>
+		</div>

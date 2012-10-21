@@ -1,0 +1,23 @@
+<?php echo $before_widget; ?>
+  <?php if ( $title )
+		echo $before_title . $title . $after_title; ?>
+<div class="mp_search_widget">		
+  <form action="<?php echo WorkerController::catalog_url()?>" method="get">
+	<ul class="mp_search_widget_fields">
+		<li class="mp_search_widget_field_item mp_row">
+			<label class="mp_search_widget_field_item_label mp_column">Position Desired:</label>
+			<input class="mp_search_widget_field_item_input mp_column" name="position_desired" type="text" />
+		</li>
+			<li class="mp_search_widget_field_item mp_row">
+			<label class="mp_search_widget_field_item_label mp_column">Skills:</label>
+			<input class="mp_search_widget_field_item_input mp_column" name="skills" type="text" />
+		</li>
+		</li>
+			<li class="mp_search_widget_field_item mp_row">
+			<label class="mp_search_widget_field_item_label mp_column">&nbsp;</label>
+			<input class="mp_search_widget_field_item_input mp_column" type="submit" value="<?php _e('Search', MANPOWER)?>" />
+		</li>				
+	</ul>
+  </form>
+</div>  
+<?php echo $after_widget; ?>

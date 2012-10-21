@@ -1,0 +1,56 @@
+<div id="mp_catalog" class="mp_catalog">
+
+	<div class="mp_catalog_pagination">
+		<?php if($total_pages > 1):?>
+			<?php for($i = 1; $i <= $total_pages; $i++):?>
+				<span class="mp_catalog_page <?php if($page == $i):?>mp_catalog_current_page<?php endif?>"><a href="<?php echo $this_url?>/page/<?php echo $i?><?php if($search_params):?>?<?php echo $search_params?><?php endif?>"><?php echo $i?></a></span>
+			<?php endfor?>
+		<?php endif?>
+	</div>
+
+
+	<?php if(count($workers) > 0):?>
+	<?php foreach($workers as $index=>$worker):?>
+		<div class="mp_catalog_item <?php if( ($index+1) % 2 == 1):?>mp_catalog_item_odd<?php else:?>mp_catalog_item_even<?php endif?>">			
+		
+			<div class="mp_catalog_item_image_div">
+				<a href="<?php echo get_permalink($worker->id)?>">
+				<?php $thumbnail_width = get_option('manpower_thumbnail_width')?>
+				<?php $thumbnail_width = $thumbnail_width ? $thumbnail_width: 100?>
+				<img src="<?php echo manpower_timthumb($worker->get_image_url('photo1'), 100, $thumbnail_width)?>" height="100" width="<?php echo $thumbnail_width?>" class="mp_catalog_item_image" />
+				</a>
+			</div>
+			
+			<div class="mp_catalog_item_info_div">
+				<h2><a href="<?php echo get_permalink($worker->id)?>"><?php echo $worker->lastname?>, <?php echo $worker->firstname?></a></h2>			
+				<ul>
+					<li><strong>Position Desired</strong>: <?php echo $worker->position_desired?></li>
+					<li><strong>Skills</strong>: <?php echo $worker->skills?></li>
+				</ul>
+				</div>
+			<div class="mp_clear"></div>
+		</div>
+	<?php endforeach?>
+
+	<div class="mp_catalog_pagination">
+		<?php if($total_pages > 1):?>
+			<?php for($i = 1; $i <= $total_pages; $i++):?>
+				<span class="mp_catalog_page <?php if($page == $i):?>mp_catalog_current_page<?php endif?>"><a href="<?php echo $this_url?>/page/<?php echo $i?><?php if($search_params):?>?<?php echo $search_params?><?php endif?>"><?php echo $i?></a></span>
+			<?php endfor?>
+		<?php endif?>
+	</div>
+	
+	
+	<?php else:?>
+		<div class="mp_catalog_item mp_no_catalog">
+			<?php if ($_GET):?>
+				<?php //search result?>
+				<?php _e("No workers found with the matching criteria.", MANPOWER)?>	
+			<?php else:?>
+				<?php //catalog result?>
+				<?php _e("No workers found.", MANPOWER)?>	
+			<?php endif?>
+		</div>
+	<?php endif?>
+	
+</div>

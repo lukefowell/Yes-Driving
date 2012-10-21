@@ -37,24 +37,25 @@ function blankslate_register_menus() {
 }
 add_action( 'init', 'blankslate_register_menus' );
 function blankslate_theme_widgets_init() {
-register_sidebar( array (
-'name' => 'Primary Widget Area',
-'id' => 'primary-widget-area',
-'before_widget' => '<li id="%1$s" class="widget-container %2$s">',
-'after_widget' => "</li>",
-'before_title' => '<h3 class="widget-title">',
-'after_title' => '</h3>',
-) );
-
-register_sidebar( array (
-'name' => 'Primary Widget Area1',
-'id' => 'primary-widget-area1',
-'before_widget' => '<li id="%1$s" class="widget-container %2$s">',
-'after_widget' => "</li>",
-'before_title' => '<h3 class="widget-title">',
-'after_title' => '</h3>',
-) );
-
+	register_sidebar( array (
+		'name' => 'Home Page Top 3',
+		'id' => 'home-top-three',
+		'before_widget' => '<div id="%1$s" class="widget-container %2$s">',
+		'after_widget' => "</div>",
+		'before_title' => '',
+		'after_title' => '',
+		)
+	);
+	
+	register_sidebar( array (
+		'name' => 'Home Page Bottom 2',
+		'id' => 'home-bottom-two',
+		'before_widget' => '<div id="%1$s" class="widget-container %2$s">',
+		'after_widget' => "</div>",
+		'before_title' => '',
+		'after_title' => '',
+		)
+	);
 }
 add_action( 'init', 'blankslate_theme_widgets_init' );
 $preset_widgets = array (

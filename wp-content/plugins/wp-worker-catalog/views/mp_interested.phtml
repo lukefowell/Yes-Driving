@@ -1,0 +1,31 @@
+<div id="mp_interested" class="mp_interested">
+<h2>Interested in hiring <?php echo $worker-> firstname?> <?php echo $worker-> middlename?> <?php echo $worker-> lastname?>? <br /> Please fill up the form below.</h3>
+<?php if($_GET['have_errors'] === '0'):?>
+<div class="mp_message">Message sent successfully. Please wait for our response.</div>
+<?php endif?>
+<form method="post" action="<?php echo WorkerController::interested_action()?>">
+	<?php echo WorkerController::interested_settings($worker->id)?>
+	
+	<ul class="mp_interested_fields">
+		<li class="mp_interested_field_item">
+			<label class="mp_interested_label">E-mail<span class="mp_required">*</span></label>
+			<input type="text" name="email" class="mp_interested_input text" value="<?php echo $_GET['email']?>" />
+		</li>
+		<?php if($_GET['error_email'] === '1'):?>
+		<li class="mp_interested_field_item">
+			<label class="mp_interested_label">&nbsp;</label>
+			<span class="mp_error">E-mail is required</span>				
+		</li>
+		<?php endif?>
+		<li class="mp_interested_field_item" style="padding-bottom: 0px;"><label class="mp_interested_label">Comment<span class="mp_required">*</span></label></li>
+		<li class="mp_interested_field_item"><textarea class="mp_interested_input" name="comment"><?php echo $_GET['comment']?></textarea></li>
+		<?php if($_GET['error_comment'] === '1'):?>
+		<li class="mp_interested_field_item">
+			<span class="mp_error">Comment is required</span>				
+		</li>		
+		<?php endif?>
+		<li class="mp_interested_field_item"><input type="submit" value="I am interested" /></li>
+	</ul>
+</form>
+<div class="clear"></div>
+</div>

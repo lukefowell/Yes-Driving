@@ -8,6 +8,7 @@
 ?>
 <?php get_header('learner'); ?>
 <article id="content">
+<?php if ( function_exists('insert_newsticker') ) { insert_newsticker(); } ?>
 <?php the_post(); ?>
 <div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 <div class="entry-content">
